@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Basketball Training Program — 10 Months</title>
+  <style>
+    :root{
+      --bg:#0b1024; --panel:#0f172a; --muted:#111827; --text:#e5e7eb; --sub:#9ca3af;
+      --phys:#22d3ee; --tech:#34d399; --tac:#60a5fa; --game:#fb7185; --rec:#f59e0b;
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial;
+      background:linear-gradient(180deg, var(--bg), #081234); color:var(--text)}
+    .container{max-width:1100px;margin:0 auto;padding:22px}
+
+    header{background:rgba(17,24,39,.85); border:1px solid rgba(255,255,255,.06); border-radius:var(--radius);
+      padding:18px 20px; box-shadow:0 12px 28px rgba(0,0,0,.35); position:sticky; top:12px; z-index:5; backdrop-filter: blur(8px)}
+    h1{margin:0; font-size:clamp(20px,4vw,30px)}
+    .subtitle{color:var(--sub); font-size:14px; margin-top:4px}
+    .tools{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
+    .btn{appearance:none; border:1px solid rgba(255,255,255,.12); background:linear-gradient(180deg,#172033,#0e1628); color:var(--text);
+      padding:9px 12px; border-radius:12px; cursor:pointer; font-size:13px}
+    .btn:hover{border-color:rgba(255,255,255,.24)}
+
+    .legend,.month{background:var(--panel); border:1px solid rgba(255,255,255,.06); border-radius:var(--radius); padding:16px; box-shadow:0 10px 24px rgba(0,0,0,.25)}
+    .legend{margin-top:18px}
+    .tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
+    .tag{display:inline-flex; align-items:center; gap:8px; background:var(--muted); border:1px solid rgba(255,255,255,.06); padding:6px 10px; border-radius:999px; font-size:12px}
+    .dot{width:12px; height:12px; border-radius:50%}
+    .phys{background:var(--phys)}
+    .tech{background:var(--tech)}
+    .tac{background:var(--tac)}
+    .game{background:var(--game)}
+    .rec{background:var(--rec)}
+
+    .program{display:grid; gap:14px; margin:18px 0}
+    .month h2{margin:0 0 10px 0; font-size:20px}
+    .meta{color:var(--sub); font-size:13px}
+
+    .weeks{display:grid; gap:10px; margin-top:10px}
+    .week{background:var(--muted); border:1px solid rgba(255,255,255,.06); border-radius:14px; padding:12px}
+    .week-title{font-weight:700; margin:0 0 6px 0}
+    .sessions{display:grid; grid-template-columns:repeat(2,1fr); gap:10px}
+    .session{background:#0d1528; border:1px solid rgba(255,255,255,.06); border-radius:12px; padding:10px; font-size:14px}
+    .pill{display:inline-block; font-size:11px; padding:3px 8px; border-radius:999px; margin-bottom:6px; border:1px solid rgba(255,255,255,.12)}
+    .pill.phys{background:rgba(34,211,238,.18)}
+    .pill.tech{background:rgba(52,211,153,.18)}
+    .pill.tac{background:rgba(96,165,250,.18)}
+    .pill.game{background:rgba(251,113,133,.18)}
+    .pill.rec{background:rgba(245,158,11,.18)}
+
+    footer{color:var(--sub); text-align:center; margin:18px 0 40px}
+
+    /* Print */
+    @media print{
+      header{position:static; box-shadow:none}
+      .btn{display:none}
+      body{background:#fff; color:#000}
+      .legend,.month{box-shadow:none}
+      .session,.week{background:#fff}
+      .pill{border:1px solid #777}
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="document-root">
+    <header>
+      <h1>Hamza Mohrach'sProgram — 10 Months</h1>
+      <div class="subtitle">2 sessions per week • 2 groups (same plan) • PPG → PPS → PPI → Tactical Integration</div>
+      <div class="tools">
+        <button class="btn" onclick="window.print()">Print / Save as PDF</button>
+        <button class="btn" id="download-doc">Download as Word (.doc)</button>
+      </div>
+    </header>
+
+    <section class="legend">
+      <strong>Legend</strong>
+      <div class="tags">
+        <span class="tag"><span class="dot phys"></span> Physical (PPG)</span>
+        <span class="tag"><span class="dot tech"></span> Technical (PPS)</span>
+        <span class="tag"><span class="dot tac"></span> Tactical / Positional</span>
+        <span class="tag"><span class="dot game"></span> Game / Scrimmage</span>
+        <span class="tag"><span class="dot rec"></span> Recovery / Mobility</span>
+      </div>
+    </section>
+
+    <main class="program">
+      <!-- MONTH 1: PPG -->
+      <section class="month">
+        <h2>Month 1 — PPG (Physical Preparation)</h2>
+        <div class="meta">Goal: build base — speed endurance, strength, agility, mobility, plyometrics, resistance; integrate ball late.</div>
+        <div class="weeks">
+          <div class="week">
+            <div class="week-title">Week 1 — Speed Endurance & Strength (Circuit)</div>
+            <div class="sessions">
+              <div class="session"><span class="pill phys">Session 1</span> Speed‑endurance shuttles • Timed runs • Core circuit • Push/Pull bodyweight • Breathing downreg.</div>
+              <div class="session"><span class="pill phys">Session 2</span> Strength circuit: goblet squats • RDLs • Rows • Push‑ups • Planks • Farmer carry (rounds).</div>
+            </div>
+          </div>
+          <div class="week">
+            <div class="week-title">Week 2 — Agility, Mobility & Plyo (Circuit)</div>
+            <div class="sessions">
+              <div class="session"><span class="pill phys">Session 1</span> Agility ladders • COD (T‑drill) • Hurdle skips • Hip/ankle mobility flow.</div>
+              <div class="session"><span class="pill phys">Session 2</span> Plyo circuit: pogo jumps • box step‑offs • lateral bounds • landing mechanics • mobility cool‑down.</div>
+            </div>
+          </div>
+          <div class="week">
+            <div class="week-title">Week 3 — Weight Circuit Integration</div>
+            <div class="sessions">
+              <div class="session"><span class="pill phys">Session 1</span> Full‑body weights (circuit): back squat • bench • pull‑down • split squat • anti‑rotation.</div>
+              <div class="session"><span class="pill phys">Session 2</span> Power focus: hex‑bar pulls • push press (light) • medicine‑ball throws • jumps (low contacts).</div>
+            </div>
+          </div>
+          <div class="week">
+            <div class="week-title">Week 4 — Resistance + Ball Integration</div>
+            <div class="sessions">
+              <div class="session"><span class="pill phys">Session 1</span> Bands & sleds • resisted sprints • lateral slides with bands • mobility reset.</div>
+              <div class="session"><span class="pill phys">Session 2</span> Conditioning with ball: dribble shuttles • finishing under fatigue • free‑throw breathing.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MONTHS 2–4: PPS (6 x 2-week phases) -->
+      <section class="month">
+        <h2>Month 2 — PPS (Technical) — Phases 1–2</h2>
+        <div class="meta">Focus: Dribbling fundamentals → Dribble + Shoot + Finish.</div>
+        <div class="weeks">
+          <div class="week">
+            <div class="week-title">Weeks 1–2 — Dribbling</div>
+            <div class="sessions">
+              <div class="session"><span class="pill tech">Session 1</span> Stationary & dynamic dribble • weak‑hand • protection • change‑of‑pace.</div>
+              <div class="session"><span class="pill tech">Session 2</span> Pressure dribble vs cones/defender • retreat, cross, spin, behind‑back sequences.</div>
+            </div>
+          </div>
+          <div class="week">
+            <div class="week-title">Weeks 3–4 — Dribble + Shooting + Finishing</div>
+            <div class="sessions">
+              <div class="session"><span class="pill tech">Session 1</span> Shooting form • off‑catch • footwork (1‑2, hop) • micans/extended layups.</div>
+              <div class="session"><span class="pill tech">Session 2</span> Off‑dribble pull‑ups • stops (jump/stride) • finishing vs pad • FT routine.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="month">
+        <h2>Month 3 — PPS (Technical) — Phases 3–4</h2>
+        <div class="meta">Focus: Dribble + Pass + Shoot → Small‑number advantages.</div>
+        <div class="weeks">
+          <div class="week">
+            <div class="week-title">Weeks 5–6 — Dribble + Pass + Shoot</div>
+            <div class="sessions">
+              <div class="session"><span class="pill tech">Session 1</span> Live passing windows • give‑and‑go • kick‑out after paint touch • re‑spacing.</div>
+              <div class="session"><span class="pill tech">Session 2</span> Drive‑kick‑extra • relocation shooting • skip reads • decision games.</div>
+            </div>
+          </div>
+          <div class="week">
+            <div class="week-title">Weeks 7–8 — 1v2, 2v2, 3v2</div>
+            <div class="sessions">
+              <div class="session"><span class="pill tech">Session 1</span> 1v2 advantage creation • protection finishes • foul‑to‑finish scenarios.</div>
+              <div class="session"><span class="pill tech">Session 2</span> 2v2 spacing rules • 3v2 decision‑making • quick hit drills.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="month">
+        <h2>Month 4 — PPS (Technical) — Phases 5–6</h2>
+        <div class="meta">Focus: 3v3, 4v4, 5v5 → Full‑court matches.</div>
+        <div class="weeks">
+          <div class="week">
+            <div class="week-title">Weeks 9–10 — 3v3, 4v4, 5v5</div>
+            <div class="sessions">
+              <div class="session"><span class="pill tech">Session 1</span> 3v3 constraints (no dribble, 1‑dribble, touch paint to score).</div>
+              <div class="session"><span class="pill tech">Session 2</span> 4v4/5v5 emphasis: spacing, ball/player movement, shot quality.</div>
+            </div>
+          </div>
+          <div class="week">
+            <div class="week-title">Weeks 11–12 — Full‑Court Matches</div>
+            <div class="sessions">
+              <div class="session"><span class="pill game">Session 1</span> Full‑court scrimmage • scoreboard • game roles • subs.</div>
+              <div class="session"><span class="pill game">Session 2</span> Game review • film • free throws under pressure • special situations.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MONTH 5: PPI (PPG + Technical situations) -->
+      <section class="month">
+        <h2>Month 5 — PPI (Physical + Technical Integration)</h2>
+        <div class="meta">Blend of PPG qualities with technical situations and transitions.</div>
+        <div class="weeks">
+          <div class="week">
+            <div class="week-title">Week 1 — Plyo + Finishing</div>
+            <div class="sessions">
+              <div class="session"><span class="pill phys">Session 1</span> Plyometrics (low‑mod) • approach jumps • landing control.</div>
+              <div class="session"><span class="pill tech">Session 2</span> Finishing package: euros, reverses, floaters • contact finishes.</div>
+            </div>
+          </div>
+          <div class="week">
+            <div class="week-title">Week 2 — Passing + Agility/Mobility + Sprints + Finishing</div>
+            <div class="sessions">
+              <div class="session"><span class="pill tech">Session 1</span> Passing on the move • wall/partner series • target windows.</div>
+              <div class="session"><span class="pill phys">Session 2</span> Agility & mobility circuit • short sprints • finish under fatigue.</div>
+            </div>
+          </div>
+          <div class="week">
+            <div class="week-title">Week 3 — 1v1 Transition</div>
+            <div class="sessions">
+              <div class="session"><span class="pill tech">Session 1</span> 1v1 full‑court chase • cut‑off, re‑attack • finishing reads.</div>
+              <div class="session"><span class="pill tech">Session 2</span> 1v1 outlets • hit‑ahead • decision to attack/slow.</div>
+            </div>
+          </div>
+          <div class="week">
+            <div class="week-title">Week 4 — 3v3 & 5v5 Transition</div>
+            <div class="sessions">
+              <div class="session"><span class="pill tech">Session 1</span> 3v3 transition rules • wide lanes • early drag screens.</div>
+              <div class="session"><span class="pill game">Session 2</span> 5v5 primary/secondary break • time/score situations.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MONTHS 6–8: Tactical Integration (6 x 2-week phases) -->
+      <section class="month">
+        <h2>Month 6 — Tactical Integration — Phases 1–2</h2>
+        <div class="meta">Posts definitions (attack & defense) • P&R • Free throws → then attack & defense strategies.</div>
+        <div class="weeks">
+          <div class="week">
+            <div class="week-title">Weeks 1–2 — Posts, P&R, Free Throws</div>
+            <div class="sessions">
+              <div class="session"><span class="pill tac">Session 1</span> Roles by post (1–5) on offense/defense • spacing landmarks.</div>
+              <div class="session"><span class="pill tac">Session 2</span> Pick‑and‑Roll coverages & reads • FT under fatigue.</div>
+            </div>
+          </div>
+          <div class="week">
+            <div class="week-title">Weeks 3–4 — Attack & Defense Strategies</div>
+            <div class="sessions">
+              <div class="session"><span class="pill tac">Session 1</span> Offensive packages: horns, 5‑out, motion rules.</div>
+              <div class="session"><span class="pill tac">Session 2</span> Defensive packages: ICE/Drop/Switch • shell drill with tags & rebounding.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="month">
+        <h2>Month 7 — Tactical Integration — Phases 3–4</h2>
+        <div class="meta">Expanded tactical strategies + friendly games.</div>
+        <div class="weeks">
+          <div class="week">
+            <div class="week-title">Weeks 5–6 — Tactical Strategies + Friendly Games</div>
+            <div class="sessions">
+              <div class="session"><span class="pill tac">Session 1</span> Special situations: ATO, SLOB/BLOB, press break.</div>
+              <div class="session"><span class="pill game">Session 2</span> Friendly game • apply week themes • film notes.</div>
+            </div>
+          </div>
+          <div class="week">
+            <div class="week-title">Weeks 7–8 — Tactical Strategies + Friendly Games</div>
+            <div class="sessions">
+              <div class="session"><span class="pill tac">Session 1</span> Scout‑style adjustments • matchup plans.</div>
+              <div class="session"><span class="pill game">Session 2</span> Friendly game • special focus (e.g., rebounding margin, TOs).</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="month">
+        <h2>Month 8 — Tactical Integration — Phases 5–6</h2>
+        <div class="meta">Tactical consolidation + friendly games to reinforce identity.</div>
+        <div class="weeks">
+          <div class="week">
+            <div class="week-title">Weeks 9–10 — Tactical Strategies + Friendly Games</div>
+            <div class="sessions">
+              <div class="session"><span class="pill tac">Session 1</span> Late‑game packages • two‑for‑one • foul/defend up 3.</div>
+              <div class="session"><span class="pill game">Session 2</span> Friendly game • emphasize end‑game execution.</div>
+            </div>
+          </div>
+          <div class="week">
+            <div class="week-title">Weeks 11–12 — Tactical Strategies + Friendly Games</div>
+            <div class="sessions">
+              <div class="session"><span class="pill tac">Session 1</span> Defensive toggles: switch/hedge/trap rules by lineup.</div>
+              <div class="session"><span class="pill game">Session 2</span> Friendly game • post‑game FT + recovery.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MONTHS 9–10: Placeholders for your future details -->
+      <section class="month">
+        <h2>Month 9 — Custom / To Be Defined</h2>
+        <div class="meta">Add your specific goals here (e.g., competition block, testing, recovery).</div>
+        <div class="weeks">
+          <div class="week"><div class="week-title">Week 1</div><div class="sessions"><div class="session"><span class="pill tech">Session 1</span> —</div><div class="session"><span class="pill tech">Session 2</span> —</div></div></div>
+          <div class="week"><div class="week-title">Week 2</div><div class="sessions"><div class="session"><span class="pill tech">Session 1</span> —</div><div class="session"><span class="pill tech">Session 2</span> —</div></div></div>
+          <div class="week"><div class="week-title">Week 3</div><div class="sessions"><div class="session"><span class="pill tech">Session 1</span> —</div><div class="session"><span class="pill tech">Session 2</span> —</div></div></div>
+          <div class="week"><div class="week-title">Week 4</div><div class="sessions"><div class="session"><span class="pill tech">Session 1</span> —</div><div class="session"><span class="pill tech">Session 2</span> —</div></div></div>
+        </div>
+      </section>
+
+      <section class="month">
+        <h2>Month 10 — Custom / To Be Defined</h2>
+        <div class="meta">Add your specific goals here (e.g., tournaments, peak, deload).</div>
+        <div class="weeks">
+          <div class="week"><div class="week-title">Week 1</div><div class="sessions"><div class="session"><span class="pill tech">Session 1</span> —</div><div class="session"><span class="pill tech">Session 2</span> —</div></div></div>
+          <div class="week"><div class="week-title">Week 2</div><div class="sessions"><div class="session"><span class="pill tech">Session 1</span> —</div><div class="session"><span class="pill tech">Session 2</span> —</div></div></div>
+          <div class="week"><div class="week-title">Week 3</div><div class="sessions"><div class="session"><span class="pill tech">Session 1</span> —</div><div class="session"><span class="pill tech">Session 2</span> —</div></div></div>
+          <div class="week"><div class="week-title">Week 4</div><div class="sessions"><div class="session"><span class="pill tech">Session 1</span> —</div><div class="session"><span class="pill tech">Session 2</span> —</div></div></div>
+        </div>
+      </section>
+    </main>
+
+    <footer>Built for your staff and players • Edit inline and print.</footer>
+  </div>
+
+  <script>
+    // Generate a simple .doc (Word-compatible) download from the page content
+    document.getElementById('download-doc').addEventListener('click', function(){
+      const header = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40"><head><meta charset="utf-8"><title>Program</title></head><body>';
+      const footer = '</body></html>';
+      // Clone only the main program area for Word export
+      const clone = document.querySelector('#document-root').cloneNode(true);
+      // Remove buttons in export
+      const btns = clone.querySelectorAll('.tools');
+      btns.forEach(b=>b.remove());
+      const content = header + clone.innerHTML + footer;
+      const blob = new Blob([content], {type: 'application/msword'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'Basketball_Program.doc';
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    });
+  </script>
+</body>
+</html>
